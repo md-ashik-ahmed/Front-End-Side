@@ -1,26 +1,16 @@
-import { useState } from "react";
-
+import { Toaster } from "react-hot-toast";
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
+import { router } from "../src/Routes/Routes";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <RouterProvider router={router} />
+      <Toaster></Toaster>
     </>
   );
 }
 
 export default App;
+
